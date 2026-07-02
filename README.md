@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AIBT — Athena Institute of Business & Technology
+
+Website for AIBT, built with Next.js 16 (App Router), React 19, TypeScript and Tailwind v4.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app` — routes (one folder per page, following the sitemap in the build brief)
+- `src/components` — shared UI (Nav, Footer, programme cards/detail, forms)
+- `src/data/programmes.ts` — the course catalog (Certificate Courses, MITA Academy, Executive Education, Corporate & Government Training, Emerging Professionals)
 
-## Learn More
+## Known placeholders
 
-To learn more about Next.js, take a look at the following resources:
+Several pieces of content are explicitly marked as placeholders pending confirmation before launch:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Office address, official email/phone, and social handles (`src/app/contact/page.tsx`, `src/components/Footer.tsx`)
+- Programme fees — shown as "Fee available on request" everywhere until real pricing is approved
+- Brand colors are a first pass (`src/app/globals.css`) — swap in official hex codes if/when available
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Application and enquiry forms currently submit locally (no backend wired up yet) — see `src/components/forms/DynamicForm.tsx`.
 
-## Deploy on Vercel
+## Deploying
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This is a standard Next.js app — deploys cleanly to [Vercel](https://vercel.com/new) or any Node hosting that supports Next.js.
